@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Full Film List";
+    ViewData["PageHeading"] = "Full Film List";
+}
+
+
+<section class="wrap">
+    @foreach (var item in Model)
+    {
+        <div class="filmThumb">
+            <div><img src="~/images/@item.FilmImage" /></div>
+            <h3>@item.FilmTitle</h3>
+        </div>
+    }
+</section>
