@@ -28,7 +28,18 @@ namespace WAD_Assignment.Controllers
             return View();
         }
 
+        public IActionResult OneFilm()
 
+        {
+
+            Film model = _context.Films.FirstOrDefault();
+
+            return View(model);
+
+        }
+
+
+        //AllFilms Action returns all films in a list
         public IActionResult AllFilms()
 
         {
@@ -38,6 +49,41 @@ namespace WAD_Assignment.Controllers
             return View(model);
 
         }
+
+        //Film Details Action from accessing the id.
+        public IActionResult FilmDetails(int id)
+
+        {
+
+            Film model = _context.Films.Find(id);
+
+            return View(model);
+
+        }
+
+        //Search Action
+        public IActionResult Search(String SearchString)
+
+        {
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                var films = from m in _context.Films
+                            where m.FilmTitle.Contains(SearchString)
+                            select m;
+
+                List<Film> model = films.ToList();
+
+                ViewData["SearchString"] = SearchString;
+
+                return View(model);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
