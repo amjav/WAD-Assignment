@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WAD_Assignment.Models;
+using WAD_Assignment.Security;
 
 namespace WAD_Assignment
 {
@@ -28,6 +29,20 @@ namespace WAD_Assignment
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //for connection to the users database
+            services.AddDbContext<AppIdentityDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<AppIdentityUser, AppIdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>();
+
+            //cookie to manage the session for when a user is logged in to the application
+            services.ConfigureApplicationCookie(opt =>
+            {
+                opt.LoginPath = "/Security/SignIn";
+                opt.AccessDeniedPath = "/Security/AccessDenied";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +62,7 @@ namespace WAD_Assignment
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
