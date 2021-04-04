@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Sheffield Streams</title>
+    <title>@ViewData["Title"] - CMS</title>
     <link rel="stylesheet" href="~/css/cms.css" />
 </head>
 <body>
@@ -20,6 +20,17 @@
                     </ul>
                 </nav>
             </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="login">
+                    <p>Welcome @User.Identity.Name</p>
+                    <form asp-controller="Security" asp-action="SignOut" method="post">
+                        <button type="submit" class="delete">Sign Out</button>
+                    </form>
+                </div>
+            }
+
 
 
         </div>

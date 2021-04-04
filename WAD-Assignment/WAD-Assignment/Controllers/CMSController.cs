@@ -7,11 +7,14 @@ using Microsoft.Extensions.Logging;
 using WAD_Assignment.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WAD_Assignment.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class CMSController : Controller
     {
         private readonly ILogger<CMSController> _logger;

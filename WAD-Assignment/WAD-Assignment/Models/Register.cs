@@ -25,5 +25,8 @@ namespace WAD_Assignment.Models
         [Required]
         public string FullName { get; set; }
 
+        [Required]
+        public DateTime BirthDate { get; set; }
+
     }
 }
