@@ -173,5 +173,11 @@ namespace WAD_Assignment.Controllers
             TempData["msg"] = "Item Removed";
             return RedirectToAction("ManageCart");
         }
+
+        public IActionResult DeleteSession()
+        {
+            HttpContext.Session.Clear();
+            return Redirect("/Home/SessionDemo");
+        }
     }
 }
