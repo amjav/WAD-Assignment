@@ -46,10 +46,15 @@ main{
     flex: 0 0 25%;
 }
 
-section {
-    flex: 0 0 75%;
-    display: flex;
+section .indent-1 {
+    float: left;
+    padding-left: 30px;
+}
 
+section{
+    width:50%;
+    float:left;
+    font-size:30px;
 }
 .wrap{
     flex-wrap: wrap;
@@ -144,7 +149,7 @@ input[type=number] {
 
     .slide > img {
         height: 50%;
-        width: 50%;
+        width: 350px;
     }
 
     [data-component="slideshow"] .slide {
@@ -158,3 +163,17 @@ input[type=number] {
         display: block;
     }
 /* end of slideshow css */
+
+/*index.cshtml terminal text*/
+.hidden {
+    opacity: 0;
+}
+
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 10px;
+}
+
+/*end of index.cshtml terminal text*/
