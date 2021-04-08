@@ -139,3 +139,22 @@ input[type=number] {
         background-color: var(--button-color);
         padding: 10px 25px;
 }
+
+/* slideshow css */
+
+    .slide > img {
+        height: 50%;
+        width: 50%;
+    }
+
+    [data-component="slideshow"] .slide {
+        height: 50%;
+        width: 50%;
+        display: none;
+        text-align: center;
+    }
+
+    [data-component="slideshow"] .slide.active {
+        display: block;
+    }
+/* end of slideshow css */
