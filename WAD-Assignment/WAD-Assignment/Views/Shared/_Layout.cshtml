@@ -4,51 +4,88 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FilmNet</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/desktop.css" />
-    <link rel="stylesheet" href="~/css/mobile.css"/>
-    
+    <link rel="stylesheet" href="~/css/mobile.css" />
+
 
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FilmNet</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Security" asp-action="SignIn">Log In</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="topnav" id="myTopnav">
+            <a class="navbar-brand active" asp-area="" asp-controller="Home" asp-action="Index">FilmNet</a>
+            <a class="button" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="button" asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
+            <a class="button" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+            <a class="button" asp-area="" asp-controller="Home" asp-action="ManageCart">Basket</a>
+            <a class="button" style=" float:left" asp-area="" asp-controller="Security" asp-action="SignIn">Log In</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header>
+   
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - WAD_Assignment - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    
+    
+    <footer>
+        <div class="contain">
+            <div class="col">
+                <h1>Quick Links</h1>
+                <ul>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Security" asp-action="SignIn">Log In</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="ManageCart">Basket</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Latest Films</h1>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Contact Info</h1>
+                <ul>
+                    <li>0114 274 5676</li>
+                    <li>Twitter: FilmNet</li>
+                    <li>Instagram: FilmNet</li>
+                    <li>Snapchat: FilmNetFun</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Support</h1>
+                <ul>
+                    <li>Contact us</li>
+                    <li>Claim Voucher</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
 </body>
 </html>

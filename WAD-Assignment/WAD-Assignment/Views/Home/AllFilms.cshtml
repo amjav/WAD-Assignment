@@ -2,18 +2,50 @@
 @{
     ViewData["Title"] = "Full Film List";
     ViewData["PageHeading"] = "Full Film List";
+
 }
 
 
-<section class="wrap">
+<section class="noflex">
+    <form asp-action="Search" method="get">
+        <h1>Search</h1>
+        <div>
+
+            <label for="SearchString">Search by Title: </label> <input type="text" name="SearchString" id="SearchString" />
+
+            <input type="submit" value="Filter" />
+
+        </div>
+    </form>
+
+    <div>
+        @if (ViewData["SearchString"] != null && (string)ViewData["SearchString"] != String.Empty)
+        {
+            @foreach (var item in Model)
+            {
+                <p><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle Details</a></p>
+            }
+
+            if (Model.Count == 0)
+            {
+                <p>Sorry no matches.</p>
+            }
+        }
+    </div>
+
+</section>
+
+
+<section id="FilmsSection" class="wrap">
     @foreach (var item in Model)
     {
-    <div class="filmThumb">
-        <div class="mainImage"><img src="~/images/@item.FilmImage" /></div>
-        <h3>@item.FilmTitle</h3>
+        <div class="filmThumb">
+            <div class="mainImage">
+                <img src="~/images/@item.FilmImage" />
+            </div>
 
-        @*creates a button which links to the film details page and passes the film ID of the film selected*@
-        <p><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">Details</a></p>
-    </div>
+
+            <h3 class="FilmDetailBut"><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle</a></h3>
+        </div>
     }
 </section>
