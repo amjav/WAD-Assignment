@@ -7,6 +7,8 @@ html{
     min-height: 100%;
 }
 body {
+
+   
 }
 main{
     margin:auto;
@@ -158,39 +160,7 @@ header {
     flex-wrap: wrap;
     }
 
-    section > div.filmThumb {
-        background-color: #e1dfdf;
-        padding: 10px;
-        width: calc((100% / 4));
-        border: 3px solid #cccccc;
-        margin: 20px;
-    }
 
-@media screen and (max-width: 1100px) {
-    section > div.filmThumb {
-        width: calc((100% / 2));
-    }
-}
-
-@media screen and (max-width: 600px) {
-    section > div.filmThumb {
-       width: 100%;
-    }
-}
-
-    div.filmThumb > div {
-        overflow: hidden;
-    }
-
-    div.filmThumb > div > a > img {
-        width: 100%;
-        transform: scale(0.9,0.9);
-        transition: all 0.5s;
-    }
-
-    div.filmThumb > div > a > img:hover {
-        transform: scale(1,1);
-    }
 
     .mainImage, .filmInfo {
         padding: 5px;
@@ -313,7 +283,7 @@ footer {
     left: 0;
     bottom: 0;
     height: auto;
-    background-color: #8cade9;
+    background-color: #a3cef1;
 }
 
     footer .col {
@@ -329,11 +299,11 @@ footer {
         footer .col h1 {
             margin: 0;
             padding: 0;
-            font-family: inherit;
-            font-size: 12px;
+            font-family: 'Montserrat Subrayada', sans-serif;
+            font-size:  13px;
             line-height: 17px;
             padding: 20px 0px 5px 0px;
-            color: rgba(255,255,255,0.2);
+            color: #FFFFFF;
             font-weight: normal;
             text-transform: uppercase;
             letter-spacing: 0.250em;
@@ -346,7 +316,8 @@ footer {
         }
 
             footer .col ul li {
-                color: #999999;
+                text-decoration: none;
+                color: #6495ED;
                 font-size: 14px;
                 font-family: inherit;
                 font-weight: bold;
@@ -356,6 +327,14 @@ footer {
                 -webkit-transition: .2s;
                 -moz-transition: .2s;
             }
+
+footer.col ul li a{
+    text-decoration:none;
+}
+
+a {
+    text-decoration: none !important;
+}
 
 
 footer .col ul li:hover {
@@ -410,4 +389,76 @@ footer .col ul li:hover {
     footer .col {
         width: 100%;
     }
+}
+
+/*Box image on allFilms*/
+
+.BoxContainer {
+    padding:5px;
+    position: relative;
+}
+
+.BoxImage {
+    opacity: 1;
+    display: block;
+    max-width: 320px;
+    max-height: 314px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.BoxMiddle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.BoxContainer:hover .BoxImage {
+    opacity: 0.3;
+}
+
+.BoxContainer:hover .BoxMiddle {
+    opacity: 1;
+}
+
+.BoxText {
+    background-color: #5393fd;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+/*Search CSS*/
+
+.SearchLabelText{
+    font-family: font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 35px;
+
+}
+
+.SearchLabel {
+    padding: 10px;
+    margin-bottom:10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+.SearchInput {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
 }

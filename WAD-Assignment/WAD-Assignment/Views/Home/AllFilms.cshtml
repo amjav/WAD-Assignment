@@ -8,12 +8,11 @@
 
 <section class="noflex">
     <form asp-action="Search" method="get">
-        <h1>Search</h1>
         <div>
 
-            <label for="SearchString">Search by Title: </label> <input type="text" name="SearchString" id="SearchString" />
+            <label class="SearchLabelText" for="SearchString">Search by Title: </label> <input class="SearchLabel" type="text" name="SearchString" id="SearchString" />
 
-            <input type="submit" value="Filter" />
+            <input class="SearchInput" type="submit" value="Filter" />
 
         </div>
     </form>
@@ -39,13 +38,12 @@
 <section id="FilmsSection" class="wrap">
     @foreach (var item in Model)
     {
-        <div class="filmThumb">
-            <div class="mainImage">
-                <img src="~/images/@item.FilmImage" />
+
+        <div class="BoxContainer">
+            <img src="~/images/@item.FilmImage" alt="@item.FilmTitle" class="BoxImage" style="width:100%" />
+            <div class="BoxMiddle">
+                <div class="BoxText"><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle</a></div>
             </div>
-
-
-            <h3 class="FilmDetailBut"><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle</a></h3>
         </div>
     }
 </section>
