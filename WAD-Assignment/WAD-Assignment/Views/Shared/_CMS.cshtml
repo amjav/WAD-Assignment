@@ -18,41 +18,40 @@
             <a class="button" asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
             <a class="button" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
             <a class="button" asp-area="" asp-controller="CMS" asp-action="Index">CMS Home</a>
-            @if (User.Identity.IsAuthenticated)
-            {
-                
-                <div class="login">
-                    <p>Welcome @User.Identity.Name</p>
-                        <a>
-                            <form asp-controller="Security" asp-action="SignOut" method="post">
-                                <button>Sign Out</button>
-                            </form>
-                        </a>
-                </div>
-            }
+
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
 
 
         </div>
-
-        <div class="innerHeader">
-            @*@if (User.Identity.IsAuthenticated)
-            {
-                <div class="login">
-                    <p>Welcome @User.Identity.Name</p>
-                    <form asp-controller="Security" asp-action="SignOut" method="post">
-                        <button type="submit" class="delete">Sign Out</button>
-                    </form>
-                </div>
-            }*@
-
-
-
-        </div>
     </header>
-    <main style="margin-left:0px;">
+        
+   
+
+
+
+    
+    <main>
+
+        
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <section class="indent-1">
+                    <section>
+                        <h1>Welcome @User.Identity.Name</h1>
+                    </section>
+                    <section>
+                        <form asp-controller="Security" asp-action="SignOut" method="post">
+                            <button class="button" style="margin-top: 30px; margin-left:30px;" type="submit" >Sign Out</button>
+                        </form>
+                    </section>
+                </section>
+                    
+                
+            }
+        
 
         @RenderBody()
 

@@ -51,15 +51,6 @@ header {
             text-align: center;
         }
 
-    .login > p {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-
-    .login > form > button.delete {
-        margin-top: 0;
-    }
-
     .topnav {
         overflow: hidden;
         background-color: #5393fd;
@@ -203,19 +194,7 @@ header {
         font-size: 120%;
     }
 
-    .cta {
-        border-radius: 6px;
-        margin-top: 20px;
-        -webkit-appearance: none;
-        background: none;
-        border: none;
-        font-size: 1.2em;
-        color: #000;
-        text-transform: uppercase;
-        text-decoration: none;
-        background-color: var(--button-color);
-        padding: 10px 25px;
-    }
+    
 
     .fullWidth {
         flex: 0 0 100%;
@@ -535,4 +514,27 @@ form{
    
     padding-bottom: 295px;
     width: 100%;
+}
+/*CMS BUTTONS*/
+
+.SearchInputRed {
+    float: left;
+    padding: 10px;
+    background: #ee6055;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+.SearchInputGreen {
+    float: left;
+    padding: 10px;
+    background: #90be6d;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
 }
