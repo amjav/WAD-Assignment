@@ -4,37 +4,45 @@
 
 }
 
-    <section class="noflex">
-        <form asp-action="Search" method="get">
-            <h1>Search</h1>
-            <div>
-                <label id="SearchLabelText" for="SearchString">Search by Title: </label>
-                <input class="SearchLabel" type="text" name="SearchString" id="SearchString" />
-                <button class="SearchInput" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-        </form>
+    <section class="searchContainer">
+
+        
+            <form style="padding-left:0px;" asp-action="Search" method="get">
+                <div>
+                    <label id="SearchLabelText" for="SearchString">Search: </label>
+                </div>
+                <div>
+                    <input class="SearchLabel" type="text" name="SearchString" id="SearchString" />
+                    <button class="SearchInput" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        
+        
 
         <div>
             @if (ViewData["SearchString"] != null && (string)ViewData["SearchString"] != String.Empty)
             {
-                @foreach (var item in Model)
-                {
-                    <div class="BoxContainer">
-                        <img src="~/images/@item.FilmImage" alt="@item.FilmTitle" class="BoxImage" />
-                        <div class="BoxMiddle">
-                            <div class="BoxText"><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle</a></div>
+                <section id="FilmsSection" class="wrap">
+                    @foreach (var item in Model)
+                    {
+                        <div class="BoxContainer">
+                            <img src="~/images/@item.FilmImage" alt="@item.FilmTitle" class="BoxImage" />
+                            <div class="BoxMiddle">
+                                <div class="BoxText"><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle</a></div>
+                            </div>
                         </div>
-                    </div>
-                    @*<p><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle Details</a></p>*@
-                }
+                        @*<p><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="@item.FilmID">@item.FilmTitle Details</a></p>*@
+                    }
+                </section>
+                
 
                 if (Model.Count == 0)
                 {
-                    <p>Sorry no matches.</p>
+                <p>Sorry no matches.</p>
                 }
-            }
-        </div>
-
+                }
+                </div>
+            
     </section>
 
 

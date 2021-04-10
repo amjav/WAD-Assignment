@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CMS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/cms.css" />
     <link rel="stylesheet" href="~/css/desktop.css" />
     <link rel="stylesheet" href="~/css/mobile.css" />
@@ -12,18 +13,32 @@
 </head>
 <body>
     <header>
-            <div class="topnav" id="myTopnav">
-                <a class="navbar-brand active" asp-area="" asp-controller="Home" asp-action="Index">FilmNet</a>
-                <a class="button" asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
-                <a class="button" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
-                <a class="button" asp-area="" asp-controller="CMS" asp-action="Index">CMS Home</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
+        <div class="topnav" id="myTopnav">
+            <a class="navbar-brand active" asp-area="" asp-controller="Home" asp-action="Index">FilmNet</a>
+            <a class="button" asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
+            <a class="button" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+            <a class="button" asp-area="" asp-controller="CMS" asp-action="Index">CMS Home</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                
+                <div class="login">
+                    <p>Welcome @User.Identity.Name</p>
+                        <a>
+                            <form asp-controller="Security" asp-action="SignOut" method="post">
+                                <button>Sign Out</button>
+                            </form>
+                        </a>
+                </div>
+            }
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+
+
+        </div>
 
         <div class="innerHeader">
-            @if (User.Identity.IsAuthenticated)
+            @*@if (User.Identity.IsAuthenticated)
             {
                 <div class="login">
                     <p>Welcome @User.Identity.Name</p>
@@ -31,13 +46,13 @@
                         <button type="submit" class="delete">Sign Out</button>
                     </form>
                 </div>
-            }
+            }*@
 
 
 
         </div>
     </header>
-    <main>
+    <main style="margin-left:0px;">
 
         @RenderBody()
 
@@ -46,6 +61,57 @@
 
 
     <footer>
+
+        <div class="contain">
+            <div class="col">
+                <h1>Quick Links</h1>
+                <ul>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Security" asp-action="SignIn">Log In</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="ManageCart">Basket</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Latest Films</h1>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                    <li><a asp-controller="Home" asp-action="FilmDetails" asp-route-id="15">FilmTitle</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Contact Info</h1>
+                <ul>
+                    <li>0114 274 5676</li>
+                    <li>Twitter: FilmNet</li>
+                    <li>Instagram: FilmNet</li>
+                    <li>Snapchat: FilmNetFun</li>
+                    <li>Get in touch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Support</h1>
+                <ul>
+                    <li>Contact us</li>
+                    <li>Claim Voucher</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

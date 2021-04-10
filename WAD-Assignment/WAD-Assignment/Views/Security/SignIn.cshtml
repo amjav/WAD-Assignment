@@ -4,26 +4,29 @@
 }
 <section class="SignIn">
     <form asp-controller="Security" asp-action="SignIn" method="post">
-        <h2 class="fullWidth">Log In</h2>
+        <h2 id="SearchLabelText">Log In</h2>
         <div>
-            <label asp-for="UserName"></label>
+            <label asp-for="UserName">Username</label>
             <input type="text" asp-for="UserName" />
         </div>
         <div>
-            <label asp-for="Password"></label>
+            <label asp-for="Password">Password</label>
             <input type="password" asp-for="Password" />
         </div>
         <div>
-            <label asp-for="RememberMe"></label>
+            <label asp-for="RememberMe">Remember Me</label>
             <input type="checkbox" asp-for="RememberMe" />
         </div>
         <div>
             <button type="submit" class="SearchInput">Sign In</button>
         </div>
-        <div asp-validation-summary="All" class="message"></div>
+        <div>
+            <div asp-validation-summary="All" class="message" style="margin-top:0px;"></div>
+        </div>
+        
 
-        <h3><a asp-controller="security" asp-action="register" style="font-size: 20px;">Create New User Account</a></h3>
+        <h3><a asp-controller="security" asp-action="register" style="font-size: 20px; text-decoration:none">Register</a></h3>
 
     </form>
 </section>
-
+                                                                      

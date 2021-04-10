@@ -3,43 +3,44 @@
     Layout = "_CMS";
 }
 
-<h2>Create New User Account</h2>
-<form method="post">
-    <table>
-        <tr>
-            <td><label asp-for="UserName"></label></td>
-            <td><input type="text" asp-for="UserName" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Password"></label></td>
-            <td><input type="password" asp-for="Password" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="ConfirmPassword"></label></td>
-            <td><input type="password" asp-for="ConfirmPassword" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Email"></label></td>
-            <td><input type="text" asp-for="Email" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="FullName"></label></td>
-            <td><input type="text" asp-for="FullName" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="BirthDate"></label></td>
-            <td><input type="date" asp-for="BirthDate" /></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <button type="submit">Create</button>
-            </td>
-        </tr>
-    </table>
-    <div asp-validation-summary="All" class="message"></div>
+<section class="SignIn">
 
-    <h3><a asp-page="/Security/SignIn">Go To Sign-In Page</a></h3>
+<form method="post">
+    <h2 id="SearchLabelText">New User</h2>
+    <div>
+        <label asp-for="UserName">Username</label>
+        <input type="text" asp-for="UserName" />
+    </div>
+    <div>
+        <label asp-for="Password">Password</label>
+        <input type="password" asp-for="Password" />
+    </div>    
+    <div>
+        <label asp-for="ConfirmPassword">Confirm Password</label>
+        <input type="password" asp-for="ConfirmPassword" />
+    </div>
+    <div>
+        <label asp-for="Email">Email</label>
+        <input type="text" asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="FullName">Full Name</label>
+        <input type="text" asp-for="FullName" />
+    </div>
+    <div>
+        <label asp-for="BirthDate">Date of Birth</label>
+        <input type="date" asp-for="BirthDate" />
+    </div>
+    <div>
+        <button type="submit" class="SearchInput">Register</button>
+    </div>
+    <div>
+        <div asp-validation-summary="All" class="message" style="margin-left:70px;"></div>
+    </div>
+
+    <h3><a asp-page="/Security/SignIn" style="font-size:20px; text-decoration:none;" >Go To Sign-In Page</a></h3>
 
 </form>
+</section>
 
 

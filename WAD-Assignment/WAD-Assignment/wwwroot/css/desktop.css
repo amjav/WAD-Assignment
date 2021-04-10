@@ -486,7 +486,7 @@ div input [type=text] {
 
 input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #e2e2e2;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -494,10 +494,19 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
+input[type=date] {
+    width: 100%;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-    input[type=submit]:hover {
-        background-color: #45a049;
-    }
+input[type=submit]:hover {
+    background-color: #e2e2e2;
+}
 
 div label {
     font-family: Arial;
@@ -512,4 +521,18 @@ form{
     form {
         padding-left: 10px;
     }
+}
+
+.message{
+    font-size:10px;
+    color:red;
+    margin-left:50px;
+}
+
+/*for search page*/
+
+.searchContainer {
+   
+    padding-bottom: 295px;
+    width: 100%;
 }
