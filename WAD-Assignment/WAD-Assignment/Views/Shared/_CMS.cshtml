@@ -4,23 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CMS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/cms.css" />
+    <link rel="stylesheet" href="~/css/desktop.css" />
+    <link rel="stylesheet" href="~/css/mobile.css" />
+
 </head>
 <body>
     <header>
-        <div class="innerHeader">
-            <div>
-                <h1>Content Management System: @ViewData["PageHeading"]</h1>
-                <nav>
-                    <ul>
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="AllFilms">Film List</a></li>
-                        <li><a asp-controller="Home" asp-action="Search">Search</a></li>
-                        <li><a asp-controller="CMS" asp-action="Index">CMS Home</a></li>
-                    </ul>
-                </nav>
+            <div class="topnav" id="myTopnav">
+                <a class="navbar-brand active" asp-area="" asp-controller="Home" asp-action="Index">FilmNet</a>
+                <a class="button" asp-area="" asp-controller="Home" asp-action="AllFilms">All Films</a>
+                <a class="button" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+                <a class="button" asp-area="" asp-controller="CMS" asp-action="Index">CMS Home</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
 
+        <div class="innerHeader">
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="login">
@@ -45,6 +47,9 @@
 
     <footer>
     </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

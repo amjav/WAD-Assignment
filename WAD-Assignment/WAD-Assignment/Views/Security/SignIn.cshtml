@@ -2,9 +2,9 @@
 @{
     Layout = "_CMS";
 }
-<h2 class="fullWidth">Sign In</h2>
-<section>
+<section class="SignIn">
     <form asp-controller="Security" asp-action="SignIn" method="post">
+        <h2 class="fullWidth">Log In</h2>
         <div>
             <label asp-for="UserName"></label>
             <input type="text" asp-for="UserName" />
@@ -18,11 +18,11 @@
             <input type="checkbox" asp-for="RememberMe" />
         </div>
         <div>
-            <button type="submit" class="add">Sign In</button>
+            <button type="submit" class="SearchInput">Sign In</button>
         </div>
         <div asp-validation-summary="All" class="message"></div>
 
-        <h3><a asp-controller="security" asp-action="register">Create New User Account</a></h3>
+        <h3><a asp-controller="security" asp-action="register" style="font-size: 20px;">Create New User Account</a></h3>
 
     </form>
 </section>

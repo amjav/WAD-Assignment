@@ -4,34 +4,41 @@
     ViewData["PageHeading"] = @Model.FilmTitle;
 }
 
-    <div class="shoppingCart">
+    @*<div class="shoppingCart">
         @await Component.InvokeAsync("ShoppingCart")
-    </div>
+    </div>*@
     
 
 
-    <section>
+    <section class="flex-container">
 
-        <div class="mainImage">
+
+        <div class="mainImage cont">
+            <h2 id="SearchLabelText" style="font-size:20px">@Model.FilmTitle</h2>
             <img src="~/images/@Model.FilmImage" alt="@Model.FilmTitle" />
         </div>
 
-        <div class="filmInfo">
-            <h2>@Model.FilmTitle</h2>
+        <div class="filmInfo cont">
+            
             <p>@Model.FilmDescription</p>
             <p>Certificate: @Model.FilmCertificate</p>
             <p>Streaming Price: &pound;@((Model.FilmPrice).ToString("0.00"))</p>
+        </div>
+
+        <div class="cont">
             <form method="post">
                 <input type="hidden" value="@Model.FilmID" id="FilmID" name="FilmID" />
                 <input type="hidden" value="@Model.FilmTitle" id="FilmTitle" name="FilmTitle" />
                 <input type="hidden" value="@Model.FilmPrice" id="FilmPrice" name="FilmPrice" />
-                <div>
-                    <label for="OrderQuantity">Quantity</label>
+
+                <div style="padding:10px; padding-top:40px;">
+                    <label style="font-size:20px"for="OrderQuantity">Quantity</label>
                     <input type="number" id="OrderQuantity" name="OrderQuantity" min="1" max="10" value="1" />
                 </div>
-                <div>
-                    <input type="submit" value="Add To Cart" class="cta" />
+                <div style="padding:10px; padding-top:40px;">
+                    <input class="SearchInput" type="submit" value="Add To basket" />
                 </div>
+
             </form>
         </div>
 
