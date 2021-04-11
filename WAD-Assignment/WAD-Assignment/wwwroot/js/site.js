@@ -25,7 +25,7 @@ function initSlideShow(slideshow) {
 }
 
 // function([string1, string2],target id,[color1,color2])    
-consoleText(['Hello Movie Lovers!.', 'Old and new we have them all!', 'Movie Maddness!'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
+consoleText(['Movie Lovers', 'Marathon Lovers', 'Movie Maddness'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
 
 function consoleText(words, id, colors) {
     if (colors === undefined) colors = ['#fff'];
