@@ -2,16 +2,13 @@
 @{
     Layout = "_CMS";
 }
-
-
     <section class="indent-1">
-        <section>
-            <h2 id="SearchLabelText" style="font-size:20px">@Model.FilmTitle</h2>
-            <img style="max-width: 320px; max-height: 314px;" src="~/images/@Model.FilmImage" alt="@Model.FilmTitle" />
-        </section>
-        <section>
+        <section style="width:0px;">
             <form asp-controller="CMS" asp-action="UpdateFilm">
                 <input type="hidden" name="FilmID" value="@Model.FilmID" />
+                <div>
+                    <h2 id="SearchLabelText" style="font-size:20px">@Model.FilmTitle</h2>
+                </div>
                 <div>
                     <label>Film Title</label>
                     <input asp-for="FilmTitle" />
@@ -20,7 +17,7 @@
 
                 <div>
                     <label asp-for="FilmCertificate">Film Certificate</label>
-                    <input asp-for="FilmCertificate" />
+                    <input type="text" asp-for="FilmCertificate" />
                 </div>
 
                 <div>
@@ -49,7 +46,7 @@
                 </div>
 
                 <div>
-                    <input type="submit" value="Update" class="edit" />
+                    <input type="submit" value="Update"  />
                 </div>
 
             </form>

@@ -458,27 +458,35 @@ div input [type=text] {
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 0.1px solid black;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.8em;
 }
 
 input[type=submit] {
-    width: 100%;
-    background-color: #e2e2e2;
+    float: left;
+    padding: 10px;
+    background: #90be6d;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
     cursor: pointer;
+    margin-bottom:20px;
 }
 input[type=date] {
-    width: 100%;
+    color: black;
+    margin: 8px 0;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+textarea {
     color: black;
     padding: 14px 20px;
     margin: 8px 0;
-    border: 1px solid black;
+    border: 0.1px solid black;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -537,4 +545,24 @@ form{
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
+}
+
+/*homepage*/
+
+.indexText {
+    margin:20px;
+    padding: 20px;
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+
+    .indexText img {
+        max-width: 350px;
+    }
+
+@media only screen and (max-width: 500px) {
+    .indexText img {
+        max-width: 800%;
+    }
 }

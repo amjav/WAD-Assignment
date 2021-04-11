@@ -2,9 +2,12 @@
 @{
     Layout = "_CMS";
 }
-<h1>Add Film</h1>
 
-<form asp-controller="CMS" asp-action="AddFilm">
+
+<form style="padding-left:20px"asp-controller="CMS" asp-action="AddFilm">
+    <div>
+        <h1 id="SearchLabelText" style="font-size:20px">Add Film</h1>
+    </div>
     <div>
         <label asp-for="FilmTitle">Film Title</label>
         <input type="text" asp-for="FilmTitle" />
@@ -35,7 +38,7 @@
 
     <div>
         <label asp-for="Stars">Stars</label>
-        <p>Must be a whole number!</p>
+        <p style="color:red; font-size:10px;">Must be a whole number!</p>
         <input type="text" asp-for="Stars" />
     </div>
 

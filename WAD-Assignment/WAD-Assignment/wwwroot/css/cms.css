@@ -10,30 +10,7 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #ccc;
-    overflow: auto;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
 
-.innerHeader {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.login > p {
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.login > form > button.delete {
-    margin-top: 0;
-}
 
 main {
     display: grid;
@@ -41,17 +18,6 @@ main {
     margin: auto;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-}
-
-    nav ul li a {
-        display: block;
-        padding: 5px;
-        text-decoration: none;
-    }
 
 table {
     border-collapse: collapse;
@@ -67,7 +33,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background: #CCC;
+    background: #add8e6;
 }
 
 form > div {
@@ -78,11 +44,11 @@ label {
     display: block;
 }
 
-input[type=text], input[type=password], textarea {
+/*input[type=text], input[type=password], textarea {
     font-family: Helvetica, Arial, sans-serif;
     padding: 3px 5px;
     font-size: 1.2em;
-}
+}*/
 
 .add, .edit, .delete {
     border-radius: 6px;
