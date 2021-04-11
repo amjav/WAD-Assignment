@@ -6,74 +6,69 @@
 
 }
 
-<section class="wrap">
+    <section class="wrap">
 
-    <h3 class="fullWidth">Shopping Cart</h3>
 
-    @if (Model.Count == 0)
+        @if (Model.Count == 0)
 
-    {
+        {
 
-        <div>
+            <div>
 
-            <p>Shopping Cart Empty.</p>
+                <h1>Shopping Cart</h1>
 
-        </div>
+                <p>Shopping Cart Empty.</p>
 
-    }
+            </div>
 
-    else
+        }
 
-    {
+        else
 
-        <div>
+        {
 
-            @if (ViewBag.msg != null)
-            {
+            <div>
 
-                <p class="msg">@ViewBag.msg</p>
-
-            }
-
-            <table class="fullCart">
-
-                <tr>
-
-                    <th>ID</th>
-
-                    <th>Film</th>
-
-                    <th>Quantity</th>
-
-                    <th>Price</th>
-
-                    <th>Cost</th>
-
-                    <th></th>
-
-                </tr>
-
-                @foreach (var item in Model)
-
+                @if (ViewBag.msg != null)
                 {
 
-                    cartTotal += item.OrderQuantity * item.FilmPrice;
+                    <p class="msg">@ViewBag.msg</p>
 
+                }
+
+                <table class="basket">
+                    <caption>Shopping Cart</caption>
+                    <thead>
+                        <tr>
+
+                            <td>Film</td>
+
+                            <td>Quantity</td>
+
+                            <td>Cost</td>
+
+                            <td></td>
+
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+
+                    {
+
+                        cartTotal += item.OrderQuantity * item.FilmPrice;
+                <thead>
                     <tr>
 
-                        <td>@item.FilmID</td>
 
                         <td>@item.FilmTitle</td>
 
                         <td>@item.OrderQuantity</td>
 
-                        <td>£@(item.FilmPrice.ToString("0.00"))</td>
-
                         <td>£@((item.OrderQuantity * item.FilmPrice).ToString("0.00"))</td>
 
                         <td>
 
-                            <form method="post" asp-action="RemoveCartItem">
+                            <form style="padding-left:0px;" method="post" asp-action="RemoveCartItem">
 
                                 <input type="hidden" name="FilmID" id="FilmID" value="@item.FilmID" />
 
@@ -84,28 +79,17 @@
                         </td>
 
                     </tr>
+                </thead>
 
-                }
+                    }
 
-                <tr>
+                </table>
 
-                    <td></td>
+                <div>
+                    <p>Basket Total: £@cartTotal.ToString("0.00")</p>
+                </div>
 
-                    <td></td>
-
-                    <td></td>
-
-                    <td></td>
-
-                    <td>£@cartTotal.ToString("0.00")</td>
-
-                    <td></td>
-
-                </tr>
-
-            </table>
-
-        </div>
-    }
-</section>
+            </div>
+        }
+    </section>
 

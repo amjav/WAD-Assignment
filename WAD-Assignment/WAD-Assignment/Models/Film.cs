@@ -28,6 +28,9 @@ namespace WAD_Assignment.Models
         [Column(TypeName = "decimal(18, 2)")]
         public decimal FilmPrice { get; set; }
 
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal RentPrice { get; set; }
+
         public int Stars { get; set; }
 
         [DataType(DataType.Date)]

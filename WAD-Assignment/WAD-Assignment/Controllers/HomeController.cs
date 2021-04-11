@@ -93,6 +93,8 @@ namespace WAD_Assignment.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+       
+
         [HttpPost]
         public IActionResult FilmDetails(IFormCollection form)
 
@@ -101,11 +103,13 @@ namespace WAD_Assignment.Controllers
             int FilmID = int.Parse(form["FilmID"]);
             string FilmTitle = form["FilmTitle"].ToString();
             decimal FilmPrice = Decimal.Parse(form["FilmPrice"]);
+            decimal RentPrice = Decimal.Parse(form["RentPrice"]);
             int OrderQuantity = int.Parse(form["OrderQuantity"]);
             CartItem newOrder = new CartItem();
             newOrder.FilmID = FilmID;
             newOrder.FilmTitle = FilmTitle;
             newOrder.FilmPrice = FilmPrice;
+            newOrder.RentPrice = RentPrice;
             newOrder.OrderQuantity = OrderQuantity;
             newOrder.OrderDate = DateTime.Now;
 
@@ -134,6 +138,7 @@ namespace WAD_Assignment.Controllers
             return RedirectToAction("FilmDetails");
 
         }
+
 
         [HttpGet]
         public IActionResult ManageCart()

@@ -54,6 +54,7 @@ namespace WAD_Assignment.Controllers
                     FilmDescription = model.FilmDescription,
                     FilmImage = model.FilmImage,
                     FilmPrice = model.FilmPrice,
+                    RentPrice = model.RentPrice,
                     Stars = model.Stars,
                     ReleaseDate = DateTime.Now,
                 };
@@ -88,6 +89,7 @@ namespace WAD_Assignment.Controllers
                 FilmDescription = model.FilmDescription,
                 FilmImage = model.FilmImage,
                 FilmPrice = model.FilmPrice,
+                RentPrice = model.RentPrice,
                 Stars = model.Stars,
                 ReleaseDate = model.ReleaseDate,
             };
@@ -108,6 +110,7 @@ namespace WAD_Assignment.Controllers
                     FilmDescription = model.FilmDescription,
                     FilmImage = model.FilmImage,
                     FilmPrice = model.FilmPrice,
+                    RentPrice = model.RentPrice,
                     Stars = model.Stars,
                     ReleaseDate = model.ReleaseDate
                 };

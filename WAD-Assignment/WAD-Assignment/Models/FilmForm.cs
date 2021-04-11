@@ -23,6 +23,8 @@ namespace WAD_Assignment.Models
         [Required]
         public decimal FilmPrice { get; set; }
 
+        public decimal RentPrice { get; set; }
+
         public int Stars { get; set; }
 
         public DateTime ReleaseDate { get; set; }

@@ -15,6 +15,8 @@ namespace WAD_Assignment.Models
 
         public decimal FilmPrice { get; set; }
 
+        public decimal RentPrice { get; set; }
+
         public DateTime OrderDate { get; set; }
     }
 }
