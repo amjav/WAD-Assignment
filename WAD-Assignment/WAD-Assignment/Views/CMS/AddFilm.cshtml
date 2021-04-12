@@ -4,51 +4,57 @@
 }
 
 
-<form style="padding-left:20px"asp-controller="CMS" asp-action="AddFilm">
-    <div>
-        <h1 id="SearchLabelText" style="font-size:20px">Add Film</h1>
-    </div>
-    <div>
-        <label asp-for="FilmTitle">Film Title</label>
-        <input type="text" asp-for="FilmTitle" />
-        <span asp-validation-for="FilmTitle" class="error"></span>
-    </div>
+    <form style="padding-left:20px" asp-controller="CMS" asp-action="AddFilm">
+        <div>
+            <h1 id="SearchLabelText" style="font-size:20px">Add Film</h1>
+        </div>
+        <div>
+            <label asp-for="FilmTitle">Film Title</label>
+            <input type="text" asp-for="FilmTitle" />
+            <span asp-validation-for="FilmTitle" class="error"></span>
+        </div>
 
-    <div>
-        <label asp-for="FilmCertificate">Film Certificate</label>
-        <input type="text" asp-for="FilmCertificate" />
-        <span asp-validation-for="FilmCertificate" class="error"></span>
-    </div>
+        <div>
+            <label asp-for="FilmCertificate">Film Certificate</label>
+            <input type="text" asp-for="FilmCertificate" />
+            <span asp-validation-for="FilmCertificate" class="error"></span>
+        </div>
 
-    <div>
-        <label asp-for="FilmDescription">Film Description</label>
-        <textarea asp-for="FilmDescription"></textarea>
-    </div>
+        <div>
+            <label asp-for="FilmDescription">Film Description</label>
+            <textarea asp-for="FilmDescription"></textarea>
+        </div>
 
-    <div>
-        <label asp-for="FilmImage">Film Image</label>
-        <input asp-for="FilmImage" />
-    </div>
+        <div>
+            <label asp-for="FilmImage">Film Image</label>
+            <input asp-for="FilmImage" />
+        </div>
 
-    <div>
-        <label asp-for="FilmPrice">Film Price</label>
-        <input type="text" asp-for="FilmPrice" />
-        <span asp-validation-for="FilmPrice" class="error"></span>
-    </div>
+        <div>
+            <label asp-for="FilmPrice">Film Price</label>
+            <input type="text" asp-for="FilmPrice" />
+            <span asp-validation-for="FilmPrice" class="error"></span>
+        </div>
 
-    <div>
-        <label asp-for="Stars">Stars</label>
-        <p style="color:red; font-size:10px;">Must be a whole number!</p>
-        <input type="text" asp-for="Stars" />
-    </div>
+        <div>
+            <label asp-for="RentPrice">RentPrice</label>
+            <input type="text" asp-for="RentPrice" />
+            <span asp-validation-for="RentPrice" class="error"></span>
+        </div>
 
-    <div>
-        <label asp-for="ReleaseDate">Release Date</label>
-        <input type="date" asp-for="ReleaseDate" />
-    </div>
+        <div>
+            <label asp-for="Stars">Stars</label>
+            <p style="color:red; font-size:10px;">Must be a whole number!</p>
+            <input type="text" asp-for="Stars" />
+        </div>
 
-    <div>
-        <input type="submit" value="Add" class="add" />
-    </div>
+        <div>
+            <label asp-for="ReleaseDate">Release Date</label>
+            <input type="date" asp-for="ReleaseDate" />
+        </div>
 
-</form>
+        <div>
+            <input type="submit" value="Add" class="add" />
+        </div>
+
+    </form>

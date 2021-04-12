@@ -18,5 +18,7 @@ namespace WAD_Assignment.Models
         public decimal RentPrice { get; set; }
 
         public DateTime OrderDate { get; set; }
+
+        public string PurchaseType { get; set; }
     }
 }

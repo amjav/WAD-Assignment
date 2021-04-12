@@ -99,19 +99,31 @@ namespace WAD_Assignment.Controllers
         public IActionResult FilmDetails(IFormCollection form)
 
         {
+            CartItem newOrder = new CartItem();
 
+            
             int FilmID = int.Parse(form["FilmID"]);
             string FilmTitle = form["FilmTitle"].ToString();
-            decimal FilmPrice = Decimal.Parse(form["FilmPrice"]);
-            decimal RentPrice = Decimal.Parse(form["RentPrice"]);
+
+            if (form["PurchaseType"] == "sale")
+            {
+                decimal FilmPrice = Decimal.Parse(form["FilmPrice"]);
+                newOrder.FilmPrice = FilmPrice;
+                newOrder.PurchaseType = "sale";
+            }
+            else
+            {
+                decimal RentPrice = Decimal.Parse(form["RentPrice"]);
+                newOrder.FilmPrice = RentPrice;
+                newOrder.PurchaseType = "rent";
+
+            }
             int OrderQuantity = int.Parse(form["OrderQuantity"]);
-            CartItem newOrder = new CartItem();
+            
             newOrder.FilmID = FilmID;
             newOrder.FilmTitle = FilmTitle;
-            newOrder.FilmPrice = FilmPrice;
-            newOrder.RentPrice = RentPrice;
-            newOrder.OrderQuantity = OrderQuantity;
             newOrder.OrderDate = DateTime.Now;
+            newOrder.OrderQuantity = OrderQuantity;
 
             var CartList = new List<CartItem>();
             if (HttpContext.Session.GetString(SessionCart) != null)

@@ -28,10 +28,10 @@
 
         <div class="cont">
             <form method="post" style="padding-left:0;">
+                <input type="hidden" id="PurchaseType" name="PurchaseType" value="sale" />
                 <input type="hidden" value="@Model.FilmID" id="FilmID" name="FilmID" />
                 <input type="hidden" value="@Model.FilmTitle" id="FilmTitle" name="FilmTitle" />
                 <input type="hidden" value="@Model.FilmPrice" id="FilmPrice" name="FilmPrice" />
-                <input type="hidden" value="@Model.RentPrice" id="RentPrice" name="RentPrice" />
 
                 <div style="padding:10px; padding-top:40px;">
                     <label style="font-size:20px" for="OrderQuantity">Quantity</label>
@@ -43,7 +43,25 @@
 
             </form>
         </div>
-        
+
+        <div class="cont">
+            <form method="post" style="padding-left:0;">
+                <input type="hidden" id="PurchaseType" name="PurchaseType" value="rent" />
+                <input type="hidden" value="@Model.FilmID" id="FilmID" name="FilmID" />
+                <input type="hidden" value="@Model.FilmTitle" id="FilmTitle" name="FilmTitle" />
+                @* errors as the film price is null *@
+                <input type="hidden" value="@Model.RentPrice" id="RentPrice" name="RentPrice" />
+
+                <div style="padding:10px; padding-top:40px;">
+                    <label style="font-size:20px" for="OrderQuantity">Quantity</label>
+                    <input type="number" id="OrderQuantity" name="OrderQuantity" min="1" max="10" value="1" />
+                </div>
+                <div style="padding:10px; padding-top:40px;">
+                    <input class="SearchInput" type="submit" value="Rent" />
+                </div>
+            </form>
+        </div>
+
 
 
     </section>
