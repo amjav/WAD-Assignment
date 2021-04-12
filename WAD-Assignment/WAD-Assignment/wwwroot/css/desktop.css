@@ -199,37 +199,7 @@ header {
         flex: 0 0 100%;
     }
 
-    .fullCart th, .fullCart td {
-        padding: 5px 8px;
-    }
-
-    .cartSummary {
-        border: 1px solid #ccc;
-        margin-right: 15px;
-        padding: 8px;
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 160px;
-    }
-
-        .cartSummary h4 {
-            margin-bottom: 0;
-        }
-
-        .cartSummary p {
-            margin: 0;
-        }
-
-            .cartSummary p a {
-                border-radius: 6px;
-                color: #000;
-                text-transform: uppercase;
-                text-decoration: none;
-                display: inline-block;
-                margin: 10px 0;
-                background-color: var(--button-color);
-                padding: 10px 25px;
-            }
+   
 
     /* slideshow css */
 
@@ -555,8 +525,8 @@ form{
 /*homepage*/
 
 .indexText {
-    text-align: center;
-    border: 3px solid blue;
+    background-image: url(../backgroundImg/Pic1.jpg);
+    background-size:contain;
     padding: 25% 12%;
     font-family: 'Montserrat Subrayada', sans-serif;
     font-size: 30px;
