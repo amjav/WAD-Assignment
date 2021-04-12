@@ -47,7 +47,6 @@ header {
         }
 
         .flex-container > div {
-            background-color: #f1f1f1;
             text-align: center;
         }
 
@@ -443,6 +442,8 @@ footer .col ul li:hover {
     background: #f1f1f1;
 }
 
+
+
 .SearchInput {
     float: left;
     padding: 10px;
@@ -591,6 +592,10 @@ form{
     }
 
 @media screen and (max-width: 600px) {
+
+    .SearchInputFilms{
+        margin-top: 20px;
+    }
     .basket thead {
         border: none;
         clip: rect(0 0 0 0);
@@ -617,4 +622,24 @@ form{
             content: attr(data-label);
             float: left;
         }
+}
+
+/*films*/
+
+#SearchInputFilms {
+    float: left;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+
+    #SearchInputFilms {
+        margin-top: 20px;
+    }
 }
